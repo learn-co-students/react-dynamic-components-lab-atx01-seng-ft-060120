@@ -3,19 +3,22 @@ import React, { Component } from 'react';
 
 class ColorBox extends Component {
 
-  state = {
-    todos: [
+  // state = {
+  //   todos: [
       
-    ]
-  }
+  //   ]
+  // }
 
   render() {
-    return (
-      <div className="color-box" style={{opacity: this.props.opacity}}>
-        <ColorBox opacity={this.props.opacity - 0.1} />
-      </div>
-    )
+    if(this.props.opacity >= 0.2) {
+      return (
+        <div className="color-box" style={{opacity: this.props.opacity}}>
+          <ColorBox opacity={this.props.opacity - 0.1} />
+        </div>
+      )
+    } else {
+      return null
+    }
   }
-
 }
 export default ColorBox
